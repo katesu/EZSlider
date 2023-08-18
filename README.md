@@ -1,4 +1,4 @@
-<h1 align="center">EZSlider</h1>
+<h1 align="center">EzzzSlider</h1>
 
 <p align="center">
 簡單的 Vue Slider 套件
