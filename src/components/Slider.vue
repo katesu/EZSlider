@@ -19,28 +19,35 @@
 
 <script setup>
 import { ref } from 'vue';
+import { Carousel, Slide } from 'vue-carousel';
 
-const displayBanner = [
-  {
+const props = defineProps({
+  bannerData: Array,
+});
+const displayBanner = props.bannerData.map((item) =>{
+  return {
     isShow: true,
-    imagePath: getBannerPath('bannarA', `bannarA_EN.png``bannarA_EN.png`),
+    imagePath: getBannerPath(item.a, item.b),
     onClick: () => {
       console.log('click bannarA');
     },
-  },
-];
+  }
 
-const getBannerPath = (folder, fileName, fallBackFileName) => {
-  const bannerName = isBannerExist(folder, fileName)
-    ? fileName
-    : fallBackFileName;
-  return require(`@/assets/images/banners/${folder}/${bannerName}`);
+})
+
+;
+
+const getBannerPath = (filePath, fallBackFilePath) => {
+  const bannerPath = isBannerExist(folder, filePath)
+    ? filePath
+    : fallBackFilePath;
+  return require(`${bannerPath}`);
 };
 
-const isBannerExist = (folder, fileName) => {
+const isBannerExist = (filePath) => {
   try {
     // test if file exists
-    require(`@/assets/images/banners/${folder}/${fileName}`);
+    require(`${filePath}`);
     return true;
   } catch (e) {
     return false;
