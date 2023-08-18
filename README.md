@@ -1,11 +1,8 @@
-<h1 align="center">Vue 3 UI 開發模板</h1>
+<h1 align="center">EZSlider</h1>
 
 <p align="center">
-使用 Vite 開發 Vue3 UI 框架
+簡單的 Vue Slider 套件
 </p>
-
-
-  <img src="./assets/pic.png" />
 
 ## Init
 ```
@@ -16,3 +13,10 @@ npm install
 ```
 npm run build
 ```
+
+## Props
+
+bannerData
+`[{'banrer.png','defaultBanner.png'}]`
+- first banner path is the banner displayed on view
+- second banner path is used when first banner is not found in path
